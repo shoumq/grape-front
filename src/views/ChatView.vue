@@ -336,9 +336,13 @@ function disconnectWs() {
   wsConnected.value = false
 }
 
+function genNonce() {
+  return crypto.randomUUID()
+}
+
 function sendMessage() {
   if (!ws || ws.readyState !== WebSocket.OPEN) return
-  if (!draft.value || !nonce.value) return
+  if (!draft.value) return
 
   sending.value = true
   try {
@@ -346,12 +350,11 @@ function sendMessage() {
       JSON.stringify({
         type: 'send',
         ciphertext: draft.value,
-        nonce: nonce.value,
+        nonce: genNonce(),
       }),
     )
 
     draft.value = ''
-    nonce.value = ''
   } finally {
     sending.value = false
   }
