@@ -337,7 +337,7 @@ function disconnectWs() {
 }
 
 function genNonce() {
-  return crypto.randomUUID()
+  return `${Date.now()}-${Math.random().toString(36).slice(2)}`
 }
 
 function sendMessage() {
@@ -353,7 +353,6 @@ function sendMessage() {
         nonce: genNonce(),
       }),
     )
-
     draft.value = ''
   } finally {
     sending.value = false
