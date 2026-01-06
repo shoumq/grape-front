@@ -1,0 +1,7 @@
+services:
+  grape-web:
+    build: .
+    container_name: grape-web
+    ports:
+      - "8085:80"
+    restart: unless-stopped
