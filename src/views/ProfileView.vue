@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-950 text-gray-100 p-6">
-    <div class="max-w-3xl mx-auto">
+    <div class="app-container">
       <!-- Header -->
       <div class="flex items-start sm:items-center justify-between gap-4 mb-6">
         <div>

@@ -1,9 +1,8 @@
 <template>
   <div class="min-h-screen bg-gray-950 text-gray-100 p-6">
-    <div class="max-w-4xl mx-auto">
+    <div class="app-container py-6">
       <!-- Header -->
       <div class="flex items-start sm:items-center justify-between gap-4 mb-6">
-
         <div class="flex gap-2">
           <button
             class="rounded-xl border border-gray-800 px-4 py-2 hover:bg-gray-900 disabled:opacity-60"
@@ -37,15 +36,14 @@
         </div>
       </div>
 
-      <div
-        v-else-if="chats.length === 0"
-        class="rounded-2xl border border-gray-800 bg-gray-900/40 p-6"
-      >
+      <div v-if="chats.length === 0" class="rounded-2xl border border-gray-800 bg-gray-900/40 p-6">
         <p class="text-gray-300">Чатов пока нет.</p>
         <p class="text-sm text-gray-500 mt-1">Когда появятся — они будут здесь.</p>
       </div>
 
-      <div v-else class="space-y-3">
+      <div class="h-4"></div>
+
+      <div v-if="chats.length !== 0" class="flex flex-col gap-4">
         <RouterLink
           :to="{ name: 'chat', params: { chatId: chat.id } }"
           v-for="chat in chats"
