@@ -98,7 +98,7 @@
             :key="m.id"
             class="rounded-2xl border border-gray-800 bg-gray-950/60 p-3 mt-4"
           >
-            <div class="flex items-center justify-between gap-2 ">
+            <div class="flex items-center justify-between gap-2">
               <div class="text-xs text-gray-500">id: {{ m.id }} • sender_id: {{ m.sender_id }}</div>
               <div class="text-xs text-gray-500">{{ formatDate(m.created_at) }}</div>
             </div>
@@ -180,7 +180,8 @@ const wsUrl = computed(() => {
     ? bearer.slice(7)
     : bearer
 
-  return `${proto}://5.129.194.222:8081/ws?chat_id=${chatId.value}&token=${encodeURIComponent(tokenOnly)}`
+  return `${proto}://localhost:8081/ws?chat_id=${chatId.value}&token=${encodeURIComponent(tokenOnly)}`
+  // return `${proto}://5.129.194.222:8081/ws?chat_id=${chatId.value}&token=${encodeURIComponent(tokenOnly)}`
 })
 
 function formatDate(iso) {
