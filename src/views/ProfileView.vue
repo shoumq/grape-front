@@ -99,13 +99,6 @@
               {{ user.public_key || '—' }}
             </div>
           </div>
-
-          <!-- Можно расширить, если в API появятся поля -->
-          <div class="text-xs text-gray-600">
-            Данные берутся из:
-            <span class="text-gray-500">/api/users/me</span> и
-            <span class="text-gray-500">/api/users/:id</span>
-          </div>
         </div>
       </div>
 
