@@ -12,7 +12,38 @@ function parseCookie(header = '') {
 }
 
 export default defineConfig({
-  plugins: [vue(), tailwindcss()],
+  plugins: [
+    vue(),
+    tailwindcss(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
+      manifest: {
+        name: 'Grape',
+        short_name: 'Grape',
+        description: 'Secure chat',
+        theme_color: '#030712',
+        background_color: '#030712',
+        display: 'standalone',
+        scope: '/',
+        start_url: '/',
+        icons: [
+          { src: '/pwa-192x192.png', sizes: '192x192', type: 'image/png' },
+          { src: '/pwa-512x512.png', sizes: '512x512', type: 'image/png' },
+          { src: '/pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
+        ],
+      },
+      workbox: {
+        navigateFallback: '/index.html',
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.startsWith('/api/'),
+            handler: 'NetworkOnly',
+          },
+        ],
+      },
+    }),
+  ],
   server: {
     proxy: {
       '/api': {

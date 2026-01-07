@@ -2,12 +2,12 @@
   <header class="sticky top-0 z-50 border-b border-gray-800 bg-gray-950 backdrop-blur mb-20">
     <div class="app-container py-3 flex items-center justify-between gap-4">
       <!-- Left: Logo -->
-      <RouterLink to="/" class="flex items-center gap-2 font-semibold text-lg text-gray-50">
-        <div
-          class="w-8 h-8 rounded-xl bg-white text-gray-900 flex items-center justify-center text-sm"
-        >
-          G
-        </div>
+      <RouterLink to="/" class="flex items-center font-semibold text-lg text-gray-50">
+        <img
+          src="../assets/icon.png"
+          alt=""
+          class="w-10 h-10 rounded-xl flex items-center justify-center"
+        />
         <span>Grape</span>
       </RouterLink>
 
