@@ -180,8 +180,8 @@ const wsUrl = computed(() => {
     ? bearer.slice(7)
     : bearer
 
-  return `${proto}://localhost:8081/ws?chat_id=${chatId.value}&token=${encodeURIComponent(tokenOnly)}`
-  // return `${proto}://5.129.194.222:8081/ws?chat_id=${chatId.value}&token=${encodeURIComponent(tokenOnly)}`
+  // return `${proto}://localhost:8081/ws?chat_id=${chatId.value}&token=${encodeURIComponent(tokenOnly)}`
+  return `${proto}://5.129.194.222:8081/ws?chat_id=${chatId.value}&token=${encodeURIComponent(tokenOnly)}`
 })
 
 function formatDate(iso) {

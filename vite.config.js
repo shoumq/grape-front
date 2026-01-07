@@ -16,13 +16,13 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8081',
-        // target: 'http://5.129.194.222:8081',
+        // target: 'http://localhost:8081',
+        target: 'http://5.129.194.222:8081',
         changeOrigin: true,
       },
       '/ws': {
-        // target: 'ws://5.129.194.222:8081',
-        target: 'ws://localhost:8081',
+        target: 'ws://5.129.194.222:8081',
+        // target: 'ws://localhost:8081',
         ws: true,
         changeOrigin: true,
         configure: (proxy) => {
