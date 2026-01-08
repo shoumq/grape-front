@@ -16,11 +16,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://5.129.194.22:8081',
+        target: 'https://takora.ru',
         changeOrigin: true,
       },
       '/ws': {
-        target: 'ws://5.129.194.22:8081',
+        target: 'wss://takora.ru',
         ws: true,
         changeOrigin: true,
         configure: (proxy) => {

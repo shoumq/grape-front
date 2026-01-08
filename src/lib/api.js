@@ -1,6 +1,6 @@
 import { getBearerToken } from './auth'
 
-const BASE_URL = 'http://5.129.194.222:8081'
+const BASE_URL = 'https://takora.ru'
 
 export async function apiPost(path, body) {
   const token = getBearerToken()
