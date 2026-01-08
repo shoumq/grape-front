@@ -1,2 +1,12 @@
 @import './base.css';
 @import "tailwindcss";
+
+.app-container {
+    @apply mx-auto w-full px-4;
+}
+
+@media (min-width: 1024px) {
+    .app-container {
+        width: 75%;
+    }
+}
