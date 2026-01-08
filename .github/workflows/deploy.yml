@@ -22,7 +22,7 @@ jobs:
           script: |
             set -e
 
-            cd /root/grape-front
+            cd /root/takora/takora-frontend
             git fetch --all
             git reset --hard origin/master
 
