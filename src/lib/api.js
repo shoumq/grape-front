@@ -1,10 +1,12 @@
 import { getBearerToken } from './auth'
 
-const BASE_URL = 'http://5.129.194.222:8081'
-// const BASE_URL = 'http://localhost:8081'
+const BASE_URL = 'http://' + location.host
 
 export async function apiPost(path, body) {
   const token = getBearerToken()
+
+  console.log(location.host)
+  console.log(123)
 
   const res = await fetch(`${BASE_URL}${path}`, {
     method: 'POST',
